@@ -121,3 +121,5 @@ print(CARA)
 for length, frequency in sorted_world_length.items():
     occurences = "*" * frequency
     print(f"{length:>3}|{occurences:<14}|{frequency:>1}")
+    #kontrola funkčnosti propojení s githubem
+    print("Hello world")
