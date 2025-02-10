@@ -32,6 +32,9 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
+#import knihovny pro pro správné počítání délky slov, které končí interpunkcí
+import re
+
 #Oddělovač výstupů
 CARA = "-" * 40
 
@@ -87,9 +90,9 @@ numeric_values = []
 word_length = {}
 
 #Početní operace pro analýzu slov ve vybraném textu
-
 for word in words:
-    if word.endswith(",") or word.endswith("."):
+    #původně jsem přemýšlel o použití .endswith metody, ale regulerní výraz mi přijde přehlednější
+    if re.search(r'[.,!?;:]$', word):
         word = word[:-1]
     length=len(word)
     if length in word_length:
