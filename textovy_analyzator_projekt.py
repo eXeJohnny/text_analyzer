@@ -91,8 +91,6 @@ word_length = {}
 for word in words:
     if word.endswith(",") or word.endswith("."):
         word = word[:-1]
-    else:
-        pass
     length=len(word)
     if length in word_length:
         word_length[length] += 1
